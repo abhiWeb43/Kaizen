@@ -1,0 +1,244 @@
+:root {
+  --primary-color: #ff0000;
+  --background-color: #fff;
+  --font-color: #000000;
+  --secondary-color: #ebebeb;
+}
+
+@font-face {
+  font-family: "Inter";
+  /* Font family name */
+  src: url("components/assets//fonts/static/Inter_18pt-Regular.ttf") format('truetype'),
+    /* Font file path and format */
+}
+
+@font-face {
+  font-family: "Inter-Bold";
+  /* Font family name */
+  src: url("components/assets/fonts/static/Inter_18pt-Bold.ttf") format('truetype'),
+    /* Font file path and format */
+}
+
+@font-face {
+  font-family: "Inter-Semi";
+  /* Font family name */
+  src: url("components/assets/fonts/static/Inter_18pt-SemiBold.ttf") format('truetype'),
+    /* Font file path and format */
+}
+
+
+
+* {
+  color: var(--font-color);
+  font-size: 18px;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Inter";
+  line-height: 2.1rem;
+}
+
+#main {
+  margin: 0 150px;
+}
+
+h1 {
+  font-family: "Inter-Bold" !important;
+  margin: 0;
+}
+
+p {
+  font-size: 20px;
+}
+
+button {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  border: 0;
+  color: var(--background-color);
+  padding: 8px 24px;
+  font-family: "Inter-Semi";
+}
+
+nav.nav-bar,
+nav .nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+nav h1 {
+  font-size: 32px;
+}
+
+nav .nav-list li {
+  padding: 0 30px;
+}
+
+/*CSS Hover effect*/
+/* Blood Spatter Hover Effect */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: black;
+  /* Default link color */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  /* White color on hover */
+}
+
+/* Blood Spatter Circle Effect */
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, #ff0000 30%, rgba(255, 0, 0, 0.5) 70%, rgba(255, 0, 0, 0) 100%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease-out, background 0.4s ease-out;
+  z-index: -1;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4),
+    0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+.nav-link:hover::before {
+  width: 88px;
+  /* Total size */
+  height: 88px;
+  /* Total size */
+  transform: translate(-50%, -50%) scale(1);
+  background: radial-gradient(circle, #ff0000 30%, rgba(255, 0, 0, 0.5) 70%, rgba(255, 0, 0, 0) 100%);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5),
+    0 0 25px rgba(255, 0, 0, 0.4);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #ff0000;
+  /* Pure red color */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: -1;
+}
+
+.nav-link:hover::after {
+  animation: blood-drip 1s ease-out forwards;
+}
+
+@keyframes blood-drip {
+  0% {
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+  }
+
+  50% {
+    opacity: 1;
+    top: 80%;
+    left: 70%;
+    width: 15px;
+    height: 15px;
+  }
+
+  100% {
+    opacity: 0;
+    top: 110%;
+    left: 80%;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/*CSS Hover effect*/
+
+section h1.main-goals,
+section h1.main-goals span {
+  font-size: 56px;
+  padding-top: 120px;
+}
+
+section h1.main-goals span {
+  color: var(--primary-color);
+}
+
+section#main div.goals-text {
+  width: 500px;
+}
+
+section#main .the-goals {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+section#main .the-goals .goals-img img {
+  height: 450px;
+  margin-top: 100px;
+}
+
+.quote-item{
+  width: 700px;
+}
+
+.quote-container{
+  display: flex;
+  align-items: center;
+}
+
+.hr-quote{
+  margin-left: 400px;
+}
+
+#quotes-main{
+  margin: 0 50px;
+}
+/* New Code list right left */
+.quote-align{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.quote-item-left {
+  justify-content: flex-start;
+}
+
+.quote-item-left .quote-container{
+  text-align: left;
+}
+
+.quote-item-right {
+  justify-content: flex-end;
+}
+
+.quote-item-right .quote-container{
+  text-align: right;
+}
+
+li.quote-item.quote-item-right {
+  margin-top: -20px;
+  margin-left: 600px;
+  text-align: right;
+}
+
+
+
+
+/* New Code list right left */
+
